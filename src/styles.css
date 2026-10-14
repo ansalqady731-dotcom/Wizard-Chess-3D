@@ -755,3 +755,570 @@ body.cinematic-ui-hidden #hud-bottom {
   }
 }
 
+/* ==========================================================================
+   Export Modal & Mobile PWA / APK / GitHub Styles
+   ========================================================================== */
+.export-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(4, 6, 12, 0.78);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: modalFadeIn 0.22s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.export-modal-content {
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  background: linear-gradient(175deg, #121722 0%, #090c12 100%);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.88), 0 0 32px rgba(212, 175, 55, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.export-modal-header {
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.export-modal-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.16);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+
+.export-modal-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.export-modal-close {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+  font-size: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.export-modal-close:hover {
+  background: rgba(230, 57, 70, 0.2);
+  border-color: var(--danger);
+  color: #ff858d;
+}
+
+.export-modal-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 6px 16px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.export-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.export-tab-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.export-tab-btn.active {
+  background: rgba(212, 175, 55, 0.18);
+  color: var(--gold-bright);
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+.export-tab-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.export-callout-gold {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #f7eecf;
+}
+
+.export-callout-gold strong {
+  color: var(--gold-bright);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.export-phone-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  .export-phone-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.export-qr-card {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.export-qr-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.export-qr-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  background: #fff;
+}
+
+.export-qr-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.export-url-box {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+}
+
+.export-url-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 0.68rem;
+  color: #93c5fd;
+  direction: ltr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.export-mini-btn {
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.export-instructions-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.export-subhead {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+
+.export-install-cta-btn {
+  background: linear-gradient(135deg, #e5b839 0%, #b8860b 100%);
+  color: #07090e;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(229, 184, 57, 0.35);
+  transition: all 0.18s ease;
+  text-align: center;
+}
+
+.export-install-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(229, 184, 57, 0.5);
+}
+
+.export-installed-banner {
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #7dd3fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.export-platform-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.platform-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.export-steps-list {
+  margin-top: 6px;
+  padding-right: 18px;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+/* APK Tab */
+.apk-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 680px) {
+  .apk-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.apk-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.apk-card-badge {
+  align-self: flex-start;
+  background: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.apk-card-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.apk-card-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.apk-card-desc code {
+  color: #fbbf24;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 4px;
+  border-radius: 4px;
+  direction: ltr;
+  display: inline-block;
+}
+
+.apk-points-list {
+  padding-right: 16px;
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.apk-action-wrap {
+  margin-top: auto;
+}
+
+.export-action-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  box-sizing: border-box;
+}
+
+.export-action-btn.primary {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.export-action-btn.primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.export-action-btn.secondary {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
+}
+
+.export-action-btn.secondary:hover {
+  background: rgba(212, 175, 55, 0.25);
+}
+
+/* GitHub Tab */
+.github-flow-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.github-step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #080a0f;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.step-content p {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.gold-link {
+  color: var(--gold-bright);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.github-method-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.method-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.method-desc {
+  font-size: 0.76rem !important;
+  color: #94a3b8 !important;
+  margin-bottom: 8px !important;
+}
+
+.code-block-container {
+  position: relative;
+  margin-top: 6px;
+}
+
+.code-block {
+  background: #05070a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: #38bdf8;
+  overflow-x: auto;
+}
+
+.export-copy-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(212, 175, 55, 0.25);
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.export-copy-btn:hover {
+  background: var(--gold);
+  color: #080a0f;
+}
+
+.export-download-zip-btn {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.28), rgba(212, 175, 55, 0.12));
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.16s ease;
+}
+
+.export-download-zip-btn:hover:not(:disabled) {
+  background: var(--gold);
+  color: #080a0f;
+}
+
+.export-download-zip-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.export-modal-footer {
+  padding: 12px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.export-footer-info {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.export-footer-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.export-footer-close-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+}
+
+.export-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+

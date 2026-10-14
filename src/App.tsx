@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { initWizardChess } from './wizardChessEngine.js';
+import { ExportModal } from './ExportModal';
 
 export default function App() {
   const initializedRef = useRef(false);
   const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
+  const [exportModalOpen, setExportModalOpen] = useState(false);
 
   useEffect(() => {
     if (initializedRef.current) return;
@@ -73,6 +75,15 @@ export default function App() {
             <span id="turn-text">White to Move</span>
             <span className="mode-badge" id="mode-badge">Playing as White</span>
           </div>
+          <button
+            type="button"
+            className="hud-btn primary export-trigger-btn"
+            id="btn-top-export"
+            onClick={() => setExportModalOpen(true)}
+            title="تثبيت التطبيق على الهاتف / تحميل بصيغة APK & GitHub"
+          >
+            📱 تثبيت الهاتف / APK
+          </button>
         </div>
 
         <button
@@ -151,6 +162,18 @@ export default function App() {
             onClick={() => setMobileSheetOpen(false)}
           >
             New Game
+          </button>
+          <button
+            type="button"
+            className="hud-btn primary export-trigger-btn"
+            id="btn-export-apk-github"
+            title="تثبيت التطبيق على الهاتف / تحميل بصيغة APK ومستودع GitHub"
+            onClick={() => {
+              setExportModalOpen(true);
+              setMobileSheetOpen(false);
+            }}
+          >
+            📱 الهاتف &amp; APK
           </button>
 
           <div className="hud-divider" aria-hidden="true"></div>
@@ -235,6 +258,11 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      <ExportModal
+        isOpen={exportModalOpen}
+        onClose={() => setExportModalOpen(false)}
+      />
     </>
   );
 }
